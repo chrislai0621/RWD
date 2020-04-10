@@ -3,6 +3,8 @@ $font-family:'Noto Sans TC';
 $form-border-color:#FF5E45;
 $form-border-shadow-color:#d6cfcf;
 @import 'mixin';
+@import '_reset';
+@import '_layout';
 .content
 {
 	display: flex;

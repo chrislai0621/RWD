@@ -6,6 +6,8 @@ $features-title-bg-color:#979797;
 $chef-bg-color:#3D1101;
 $chef-font-color:#EFE9E7;
 @import 'mixin';
+@import '_reset';
+@import '_layout';
 /*content CSS*/
 .content
 {
