@@ -1,99 +1,82 @@
+@charset "UTF-8";
 /*content CSS*/
-.content
-{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	padding-top: 2em;
-	background-color: #ede6e6;
-	color: #3D1101;
-
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2em;
+  background-color: #ede6e6;
+  color: #3D1101;
 }
-.content h2
-{
-	font-family: 'Noto Sans TC';
-	font-size: 3em;
-	font-weight: bolder;
-	margin-bottom: 0.3em;
+.content h2 {
+  font-family: "Noto Sans TC";
+  font-weight: bolder;
+  font-size: 3em;
+  margin-bottom: 0.3em;
 }
-.content h3
-{
-	font-family: 'Noto Sans TC';
-	font-size: 1.25em;
-	margin-bottom: 1.75em;
+.content h3 {
+  font-family: "Noto Sans TC";
+  font-weight: bolder;
+  font-size: 1.25em;
+  margin-bottom: 1.75em;
 }
-
-
-.form-login
-{
-	border-top: 3px solid #FF5E45;
-	-moz-box-shadow: 5px 5px 5px #d6cfcf; /* 老的 Firefox */
-	box-shadow: 5px 5px 5px #d6cfcf;
-	padding: 1em;
-
+.content .form-login {
+  border-top: 3px solid #FF5E45;
+  /* 老的 Firefox */
+  box-shadow: 5px 5px 5px #d6cfcf;
+  padding: 1em;
 }
-.form-login legend
-{
-	font-size: 1.125em;
-	font-weight: bolder;
-	text-align: center;
-	font-family: 'Noto Sans TC';
-	color: #3D1101;
+.content .form-login legend {
+  font-size: 1.125em;
+  font-weight: bolder;
+  text-align: center;
+  font-family: "Noto Sans TC";
+  color: #3D1101;
 }
-.form-login label
-{
-	font-size: 1em;
-	color: #3D1101;
+.content .form-login label {
+  color: #3D1101;
 }
-.content .pure-form-stacked .form-login-text{
+.content .form-login .a-forgotpassword {
+  font-size: 0.875em;
+  display: block;
+  width: 100%;
+  color: red;
   margin: 1em 0;
-   font-family: "FontAwesome";
-    font-style: normal;
-    font-weight: normal;
-    text-decoration: inherit;
 }
-.input-email,.input-password
-{
-	position: relative;
+.content .form-login .form-login-register, .content .form-login .form-login-login {
+  width: 48%;
 }
-.content .pure-form-stacked .input-email input,
-.content .pure-form-stacked .input-password input{
+.content .pure-form-stacked .form-login-text {
+  margin: 1em 0;
+  font-family: "FontAwesome";
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+}
+.content .pure-form-stacked .input-email, .content .pure-form-stacked .input-password {
+  position: relative;
+}
+.content .pure-form-stacked .input-email input, .content .pure-form-stacked .input-password input {
   padding-left: 32px;
 }
-.content .pure-form-stacked .input-email i,
-.content .pure-form-stacked .input-password i{
+.content .pure-form-stacked .input-email i, .content .pure-form-stacked .input-password i {
   position: absolute;
   top: 0.6em;
   left: 10px;
 }
-
-.form-login .a-forgotpassword
-{
-	font-size: 0.875em;
-	display: block;
-	width: 100%;
-	color: red;
-	margin: 1em 0;
+@media (max-width: 768px) {
+  .content {
+    max-width: 100%;
+    /* Firefox */
+    /* Safari */
+    box-sizing: border-box;
+  }
 }
-.form-login .form-login-register {
-    width: 48%;
-}
-.form-login .form-login-login {
-    width: 48%;
-}
-@media (max-width: 768px){
-	.content{
-		max-width: 768px;
-		-moz-box-sizing: border-box; /* Firefox */
-	    -webkit-box-sizing: border-box;/* Safari */
-	    box-sizing: border-box;
-	}
-}
-@media (max-width: 414px){
-	.content{
-		max-width: 414px;
-	}
-	.pure-form button[type="submit"] {
-      margin: 0.0em 0 0;
-	}
+@media (max-width: 568px) {
+  .content {
+    max-width: 100%;
+  }
+  .content .pure-form button[type=submit] {
+    margin: 0em 0 0;
+  }
 }

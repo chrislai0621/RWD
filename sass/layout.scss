@@ -1,0 +1,264 @@
+/*共用css，header ,menu,banner,footer*/
+
+/*載入字型*/
+@font-face {
+  font-family: 'Roboto-Light';
+  src: url('../webfonts/Roboto-Light.ttf') format("truetype");
+}
+@import 'mixin';
+
+.wrap{
+	max-width: 1024px;
+	margin: 0 auto;
+	font-family: 微軟正黑體;
+	@include pad()
+	{
+		max-width: 100%;
+		@include border-box-css();
+	}
+	@include iphone()
+	{
+		max-width: 100%;
+	}
+}
+
+
+/*header CSS*/
+.header
+{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: $header-bg-color;
+	padding: 0.625em 1.875em;
+	.logo-banner a
+	{
+		@include hidden-a-text(120px,32px,'../images/logo_w(null).svg');
+	}
+	@include pad()
+	{
+		max-width: 100%;
+		@include border-box-css();		
+	}
+	@include iphone()
+	{
+		max-width: 100%;
+	}
+	
+}
+
+.menu
+{
+	display: flex;
+	
+	li>a
+	{
+		@include menu-a-font-1em(white);
+        border-bottom: 2px solid transparent;/*避免選選單時頁面跳動*/
+    }
+
+	
+	li>a:hover
+	{
+		border-bottom: 2px solid  white;	 	
+	}
+	
+	@include pad()
+	{
+		max-width: 100%;
+		width: 100%;
+		@include border-box-css();
+	    /*隱藏選單開始*/
+	    max-height: 0px;
+	    overflow: hidden;
+	    /*隱藏選單結束*/
+	    transition: max-height 1s;
+	    margin-top: 1px;
+	    /*絕對定位疊在網頁上*/
+	    position: absolute;
+	    z-index: 100;
+	    /*header 80px+1px boder 線條*/
+	    top: 43px;
+	    left: 0;
+	    right: 0;
+	    background: $header-bg-color;
+	    flex-direction: column;
+	    text-align: right;
+	    li
+	    {
+	    	display: block;
+	      	max-width: 100%;
+	      	border-bottom: 1px dashed white;
+	    }
+	    li>a:hover
+	    {
+	    	border-bottom: 0px;
+	    	color: gray;
+	    }
+	    	
+	}
+}
+.showmenu
+{
+	display: none;
+	@include pad(){
+    	display: block;
+		color: white;
+		font-size: 1.5em;
+	}
+}
+
+/*jQ點擊後動態在 body 加上 class */
+.menu-show .menu{
+    max-height: 400px
+}
+
+/*banner CSS*/
+.banner
+{
+	height:420px;
+	background-image:  url(../images/header_desktop.png) ;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-color:  $header-bg-color;
+	background-size: contain;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	.slogan
+	{
+		padding-top: 1.25em;
+		padding-bottom:1.625em;
+		padding-left: 1.375em;
+		padding-right: 2.625em;
+		margin: 0 auto;
+		background-color:  rgba(0, 0, 0 , 0.5); /*灰色半透明*/
+		text-align: center;
+	}
+	.slogan h2
+	{
+		padding-bottom:0.55em;
+		font-size: 2.25em;
+		color: white;
+	}
+	.slogan h4
+	{
+		line-height: 1.5em;
+		color: white;
+	}
+	.slogan span
+	{
+		margin-left: 0.3em;
+		margin-right: 0.3em;
+	}
+	@include pad()
+	{
+	    max-width: 100%;
+		max-height:420px;
+		@include border-box-css();
+	}
+	@include iphone
+	{
+		max-width: 100%;
+		max-height:280px;
+		font-size: 70%;
+		background-image:  url(../images/header_mobile.png) ;	
+	}
+}
+
+
+
+/*footer css*/
+.footer
+{
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0.625em 1.875em;	
+	background-color: $bg-color;
+	color: $font-color;
+	.footer-about
+	{
+		width: 28%;
+		margin-right: 2%;
+		margin-bottom:30px;
+		h2
+		{
+			@include font-h2();
+		}
+	}
+	.footer-contact
+	{
+		width: 38%;
+		margin-right: 2%;
+		margin-bottom: 30px;
+		h2
+		{
+			@include font-h2();
+		}
+		ul
+		{
+			list-style: disc;
+			padding-left: 1.5em;
+		}
+	}
+	.footer-logo
+	{
+		width: 30%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-end;
+		.logo-footer a
+		{
+			@include hidden-a-text(245px,49px,'../images/logo_l@svg.svg')
+		}
+		div
+		{
+			font-size:3.0625em;
+			font-weight: bolder;
+			letter-spacing: 0px;
+		}
+		.google-logo
+		{
+			color: #ed4b32;
+			@include font-h1();
+		}
+		.twitter-logo
+		{
+			color: #3298d6;
+			@include font-h1();	
+		}
+		.facebook-logo
+		{
+			color: #2a5086;
+			@include font-h1();	
+		}
+	}
+	@include pad()
+	{
+		max-width: 100%;
+		.footer-about,.footer-contact,.footer-logo
+		{
+			width: 100%;
+			height: auto;
+		}
+		.logo-footer
+		{
+			display: none;
+		}
+	}
+}
+
+.form-btn-gray {
+    @include btn-gray();
+}
+.form-btn-orange {
+    @include btn-orange();
+}
+.pure-form-stacked .form-text{
+   margin: 1em 0 !important;
+   font-family: "FontAwesome"!important;
+    font-style: normal!important;
+    font-weight: normal!important;
+    text-decoration: inherit!important;
+}

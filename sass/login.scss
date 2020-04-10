@@ -1,0 +1,97 @@
+/*content CSS*/
+$font-family:'Noto Sans TC';
+$form-border-color:#FF5E45;
+$form-border-shadow-color:#d6cfcf;
+@import 'mixin';
+.content
+{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 2em;
+	background-color: $bg-color;
+	color: $content-font-color;
+	h2
+	{
+		font-family: $font-family;
+		font-weight: bolder;
+		@include font-36px()
+	}
+	h3
+	{
+		font-family: $font-family;
+		font-weight: bolder;
+		@include font-20px()
+	}
+
+	.form-login
+	{
+		border-top: 3px solid #FF5E45;
+		-moz-box-shadow: 5px 5px 5px $form-border-shadow-color; /* 老的 Firefox */
+		box-shadow: 5px 5px 5px $form-border-shadow-color;
+		padding: 1em;
+		legend
+		{
+			font-size: 1.125em;
+			font-weight: bolder;
+			text-align: center;
+			font-family: $font-family;
+			color: $content-font-color;
+		}
+		label
+		{
+			color: $content-font-color;
+		}
+		
+			
+		.a-forgotpassword
+		{
+			font-size: 0.875em;
+			display: block;
+			width: 100%;
+			color: red;
+			margin: 1em 0;
+		}
+		.form-login-register,.form-login-login {
+		    width: 48%;
+		}
+	}
+
+
+	.pure-form-stacked
+	{
+		.form-login-text
+		{
+			margin: 1em 0;
+			font-family: "FontAwesome";
+			font-style: normal;
+			font-weight: normal;
+			text-decoration: inherit;
+		}
+		.input-email,.input-password
+		{
+			position: relative;
+			input{
+				padding-left: 32px;
+			}
+			i{
+				position: absolute;
+				top: 0.6em;
+				left: 10px;
+			}
+		}		
+
+	}
+	@include pad()
+	{
+		max-width: 100%;
+		@include border-box-css();		
+	}
+	@include iphone()
+	{
+		max-width: 100%;
+		.pure-form button[type="submit"] {
+	      margin: 0.0em 0 0;
+		}
+	}
+}
