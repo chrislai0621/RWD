@@ -15,9 +15,7 @@
 	<meta property="og:url" content="#" />
 	<meta property="og:title" content="六角西餐廳" />
 	<meta property="og:description" content="咬一口就無法忘懷的漢堡" />
-    <link rel="stylesheet" href="css/all.css"><!--fownawesome-->
-    <link rel="stylesheet" href="css/forms.css"><!--pure.css-->
-    <link rel="stylesheet" href="css/buttons.css"><!--pure.css-->
+    <link rel="stylesheet" href="css/all.css"><!--fownawesome,pure.css-->
     <link rel="stylesheet" href="css/index.css">
 
 </head>
@@ -122,8 +120,9 @@
 						        <label for="peoplecount">人數</label>
 						        <input id="peoplecount" type="number" placeholder="請輸入訂位人數" class="form-text">
 						        <label for="isvegetarian">是否需要素食</label>
-						        是<input id="isvegetarian" name="isvegetarian" type="radio" value="1" checked>
-						       否<input id="isvegetarian" name="isvegetarian" type="radio" value="0">
+						        <label for="isvegetarian_true" class="label_inline">是</label>
+						        <input id="isvegetarian_true" name="isvegetarian" type="radio" value="1" checked>
+						       <label for="isvegetarian_false" class="label_inline">否</label><input id="isvegetarian_false" name="isvegetarian" type="radio" value="0">
 						        <div class="div-form-button">
 									<button type="button" class="pure-button form-btn-gray">取消</button>
 									<button type="submit" class="pure-button form-btn-orange">送出</button>	

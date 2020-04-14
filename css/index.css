@@ -937,6 +937,9 @@ textarea {
   margin: 1em 28px 10px 10px;
   text-align: left;
 }
+.map .map-content .map-content-reservation .form-reservation .label_inline {
+  display: inline;
+}
 .map .map-content .map-content-reservation .form-reservation .div-form-button {
   text-align: right;
 }
