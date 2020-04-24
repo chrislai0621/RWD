@@ -836,12 +836,18 @@ textarea {
   font-size: 24px;
   margin-bottom: 50px;
 }
-.comment .comment-content {
+@media (max-width: 768px) {
+  .comment {
+    max-width: 100%;
+  }
+}
+
+.comment-content {
   display: flex;
   padding-left: 42px;
   padding-right: 42px;
 }
-.comment .comment-content li {
+.comment-content li {
   display: flex;
   width: 32%;
   margin-bottom: 30px;
@@ -851,36 +857,33 @@ textarea {
   /* Safari */
   box-sizing: border-box;
 }
-.comment .comment-content li img {
+.comment-content li img {
   width: 67px;
   height: 67px;
   border-radius: 50%;
   margin-bottom: 20px;
   margin-right: 13px;
 }
-.comment .comment-content li .comment-message h3 {
+.comment-content li .comment-message h3 {
   font-size: 1.17em;
   margin: 0.83em 0;
   margin-bottom: 22px;
 }
-.comment .comment-content li .comment-message p {
+.comment-content li .comment-message p {
   font-size: 16px;
   margin-bottom: 16px;
 }
-.comment .comment-content li .comment-message .comment-jobtitle {
+.comment-content li .comment-message .comment-jobtitle {
   text-align: right;
 }
 @media (max-width: 768px) {
-  .comment {
-    max-width: 100%;
-  }
-  .comment .comment-content {
+  .comment-content {
     flex-direction: column;
     width: 100%;
     padding-left: 0;
     padding-right: 0;
   }
-  .comment .comment-content li {
+  .comment-content li {
     /*map css*/
     width: 96%;
     height: auto;
